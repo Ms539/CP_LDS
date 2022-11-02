@@ -1,0 +1,29 @@
+ALGORITHM Probleme1-solution1
+VAR
+    arr1 : ARRAY_OF INTEGER[4];
+    arr2 : ARRAY_OF INTEGER[5];
+    sum : INTEGER := 0 ;
+    i : INTEGER;
+	sumArr : ARRAY_OF INTEGER[];
+	sumArrIndex : INTEGER := 0;
+
+BEGIN
+	arr1 := {3,1,7,9};
+	arr2 := {2,4,1,9,3};
+    FOR i FROM 0 TO arr1.length-1 STEP step DO
+        IF (arr2.includes(arr1[i])=FALSE) THEN
+			sum := sum + arr1[i];
+			sumArr[sumArrIndex] := arr1[i];
+			sumArrIndex := sumArrIndex + 1;
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO arr2.length-1 STEP step DO
+        IF (arr1.includes(arr2[i])=FALSE) THEN
+			sum := sum + arr2[i];
+			sumArr[sumArrIndex] := arr2[i];
+			sumArrIndex := sumArrIndex + 1;
+        END_IF
+    END_FOR
+	write ("sum of elements is: ",sum);
+	write ("array of distinct elements: ",sumArr);
+END

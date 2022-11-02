@@ -1,0 +1,20 @@
+ALGORITHM Problem 2 s1
+VAR
+    set1 : ARRAY_OF INTEGER[4]; 
+    set2 : ARRAY_OF INTEGER[5]; 
+   i : INTEGER;
+   set3_length : INTEGER := 0;
+   set3 : ARRAY_OF INTEGER[]; 
+   sum_overlapping : INTEGER := 0;
+BEGIN
+    set1 := {3,1,7,9};
+    set2 := {2,4,1,9,3};
+    FOR i FROM 0 TO set1.length-1 STEP step  DO
+       IF (set2.includes(set1[i])) THEN
+       sum_overlapping := sum_overlapping + set1[i];
+       set3[set3_length] := set1[i] ;
+       set3_length := set3_length +1 ;     
+       END_IF
+    END_FOR
+
+END
